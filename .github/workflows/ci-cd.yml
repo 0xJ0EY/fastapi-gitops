@@ -18,6 +18,10 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
+
+      - name: Install Python dependencies
+        uses: py-actions/py-dependency-install@v4
+
       - name: Run Linter - Ruff
         run: ruff check app/ tests/
 
@@ -29,6 +33,10 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
+
+      - name: Install Python dependencies
+        uses: py-actions/py-dependency-install@v4
+
       - name: Run Tests
         run: pytest --cov=app --cov-fail-under=80
 
