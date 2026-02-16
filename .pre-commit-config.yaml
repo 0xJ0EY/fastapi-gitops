@@ -3,3 +3,29 @@ repos:
     rev: v5.0.0
     hooks:
       - id: trailing-whitespace
+      - id: check-added-large-files
+      - id: check-yaml
+      - id: detect-private-key
+
+  # sorting
+  - repo: https://github.com/pycqa/isort
+    rev: 5.13.2
+    hooks:
+      - id: isort
+
+  # ruff linter
+  - repo: https://github.com/astral-sh/ruff-pre-commit
+    rev: v0.15.1
+    hooks:
+      - id: ruff-check
+
+  # security scanner
+  - repo: https://github.com/gitleaks/gitleaks
+    rev: v8.24.2
+    hooks:
+      - id: gitleaks
+
+  - repo: https://github.com/thoughtworks/talisman
+    rev: 'v1.32.2'
+    hooks:
+      - id: talisman-commit
